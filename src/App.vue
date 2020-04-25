@@ -1,33 +1,36 @@
 <template>
 <div>
-	<h1>Witaj w systemie zapisów</h1>	
+
+	<h1>Witaj w systemie zapisow</h1>	
 		
 	<div v-if="authenticatedUsername">
-	<h3>Zalogowany jako: {{ authenticatedUsername }}</h3>
-	<a @click="logMeOut()">Wyloguj</a>
+		<h3>Zalogowany jako: {{ authenticatedUsername }}</h3>
+		<a @click="logMeOut()">Wyloguj</a>
 	</div>
 
 	<div v-else>
-		<input type="email" v-model="email">
-		<button @click="logMeIn()">Zaloguj siê</button>
+		<login-form @login="logMeIn($event)"></login-form>		
 	</div>
+	
 </div>
 </template>
 
+
 <script>
 import "milligram";
+import LoginForm from "./LoginForm";
 
-	export default {
-		data() {
+export default {
+	components: {LoginForm},
+	data() {
 		return {
 			email: '',
 			authenticatedUsername: ''
 		};
 	},
-		methods: {
-		logMeIn() {
-			this.authenticatedUsername = this.email;
-			this.email = '';
+	methods: {
+		logMeIn(username) {
+			this.authenticatedUsername = username;
 		},
 		logMeOut() {
 			this.authenticatedUsername = '';
@@ -35,6 +38,8 @@ import "milligram";
 	}
 }
 </script>
+
+
 
 <style>
 </style>
