@@ -11,19 +11,29 @@
 	
 		<input type="email"
 			v-model="email">
+			
+	<button @click="alertMyEmail()">Wyswietl moj e-mail w alercie</button>
+	
   </div>
 </template>
 
 
 
 <script>
+
 export default {
 	data() {
  		return {
  			email: ''
  		};
- 	}
+ 	},
+ 	methods: {
+  		alertMyEmail() {
+    		alert(this.email);
+  		}
+	}
 }
+
 </script>
 
 
