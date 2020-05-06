@@ -15,6 +15,7 @@
     </table>
 </template>
 
+
 <script>
     export default {
         props: ['meetings']
