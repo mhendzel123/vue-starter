@@ -1,6 +1,6 @@
 <template>
     <div>
-        <label>Zaloguj się e-mailem</label>
+        <label>Zaloguj sie e-mailem</label>
         <input type="email" v-model="email">
         <button @click="enter()">{{ buttonLabelToDisplay }}</button>
     </div>
@@ -21,7 +21,7 @@
         },
         computed: {
             buttonLabelToDisplay() {
-                return this.buttonLabel || 'Zaloguj się';
+                return this.buttonLabel || 'Zaloguj sie';
             }
         }
     }
