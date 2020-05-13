@@ -24,7 +24,7 @@
             <td>{{ meeting.name }}</td>
 			<td>{{ meeting.description }}</td>			
 			<td>
-	        <p v-for="participant in meeting.participants" :key="participant" v-if="editing"> <ul>{{ participant }}</ul> </p>
+	        <p v-for="participant in meeting.participants" :key="participant" v-if="editing"> <ul><li>{{ participant }}<li></ul> </p>
 			<p v-else><ul> <li>{{participant}}</li> </ul></p>          
             </td>
 		    <td>		   
